@@ -1,0 +1,598 @@
+
+:root {
+  --green: #2a6d3d;
+  --green-dark: #1f4f2d;
+  --cream: #ece8df;
+  --cream-deep: #e5e0d4;
+  --page: #f4f2ee;
+  --charcoal: #151515;
+  --muted: rgba(21, 21, 21, 0.72);
+  --line: rgba(21, 21, 21, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page);
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+}
+
+.navbar {
+  width: min(1440px, calc(100% - 120px));
+  margin: 0 auto;
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  width: 132px;
+  height: 68px;
+  overflow: hidden;
+  flex: 0 0 132px;
+  filter: none;
+}
+
+.logo img {
+  position: absolute;
+  top: -66px;
+  left: -19px;
+  width: 170px;
+  max-width: none;
+  height: auto;
+}
+
+.nav-links {
+  margin-left: auto;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3.2vw, 38px);
+  transform: translateY(-10px);
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.nav-links .contact-pill {
+  background: #248126;
+  color: #ffffff;
+  padding: 9px 35px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-left: 28px;
+  transform: translateY(-3px);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding: 132px 10.3% 10vh 8.5%;
+  background-image:
+    linear-gradient(90deg, rgba(17, 18, 18, 0.42) 0%, rgba(17, 18, 18, 0.23) 55%, rgba(17, 18, 18, 0.28) 100%),
+    linear-gradient(180deg, rgba(15,15,15,0.16) 0%, rgba(15,15,15,0.28) 100%),
+    url("../images/sandy_remodel/sandy_remodel001.jpg");
+  background-size: cover;
+  background-position: center 37%;
+}
+
+.hero-inner {
+  width: min(700px, 100%);
+  color: #fff;
+}
+
+.eyebrow,
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.95);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 7.2vw, 88px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.98);
+}
+
+.hero-copy {
+  max-width: 500px;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 24px;
+  min-width: 245px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.primary-btn {
+  background: rgba(241, 239, 233, 0.92);
+  color: var(--charcoal);
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn:hover {
+  background: #e7e1d8;
+}
+
+.secondary-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.about-section,
+.work-section,
+.testimonials-section,
+.faq-section,
+.contact-page {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.about-section {
+  background: var(--cream);
+  padding-top: 92px;
+  padding-bottom: 60px;
+}
+
+.section-label {
+  color: var(--green);
+  margin-bottom: 22px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.about-copy h2,
+.work-section h2,
+.faq-intro h2,
+.testimonials-section h2,
+.contact-page h2 {
+  font-size: clamp(44px, 6vw, 118px);
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  font-weight: 700;
+}
+
+.team-description {
+  max-width: 500px;
+  justify-self: end;
+}
+
+.team-description p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 260px));
+  gap: 44px;
+  justify-content: flex-start;
+  margin-top: 18px;
+}
+
+.staff-member h3 {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.staff-member p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.work-section {
+  background: var(--cream);
+  padding-top: 18px;
+  padding-bottom: 68px;
+}
+
+.work-section h2 {
+  max-width: 1200px;
+  margin-bottom: 8px;
+}
+
+.work-section h2 span {
+  color: var(--green-dark);
+}
+
+.work-intro {
+  max-width: 860px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.service-categories {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 24px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(21,21,21,0.08);
+}
+
+.category {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  font-weight: 700;
+  padding-top: 12px;
+}
+
+.testimonials-section {
+  background: var(--page);
+  padding-top: 92px;
+  padding-bottom: 92px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.testimonials-heading {
+  justify-self: end;
+  text-align: right;
+}
+
+.testimonials-section h2 {
+  font-size: clamp(44px, 5.4vw, 88px);
+}
+
+.reviews-widget {
+  min-width: 0;
+  width: 100%;
+}
+
+.faq-section {
+  background: var(--cream);
+  padding-top: 44px;
+  padding-bottom: 88px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(280px, 1.1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.faq-intro h2 {
+  margin-bottom: 12px;
+}
+
+.faq-cta {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.faq-cta a {
+  text-decoration: none;
+  color: var(--charcoal);
+  font-weight: 700;
+}
+
+.faq-list {
+  max-width: 780px;
+}
+
+.faq-list details {
+  border-top: 1px solid var(--line);
+}
+
+.faq-list details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 0;
+  font-size: clamp(20px, 2vw, 25px);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--green);
+}
+
+.faq-list details[open] summary::after {
+  content: "−";
+}
+
+.contact-page {
+  background: var(--cream);
+  padding-top: 10px;
+  padding-bottom: 70px;
+}
+
+.contact-page h2 {
+  max-width: 1100px;
+}
+
+.site-footer {
+  background: var(--cream);
+  padding: 0 7% 30px;
+}
+
+.footer-inner {
+  border-top: 1px solid rgba(21,21,21,0.18);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.footer-contact p,
+.footer-social p {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .about-layout,
+  .faq-section,
+  .testimonials-section {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-heading {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .staff-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+
+  .service-categories {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    width: min(100%, calc(100% - 28px));
+    flex-wrap: wrap;
+    gap: 12px 14px;
+    padding-top: 18px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 60px;
+    flex-basis: 120px;
+  }
+
+  .logo img {
+    top: -57px;
+    left: -17px;
+    width: 154px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    transform: none;
+    margin-right: 0;
+  }
+
+  .nav-links a {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-links .contact-pill {
+    font-size: 8px;
+    line-height: 1.4;
+    margin-left: 0;
+    padding: 6px 12px;
+    transform: none;
+  }
+
+  .hero {
+    min-height: 700px;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 48px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.04em;
+  }
+
+  .hero h1 {
+    font-size: clamp(54px, 13vw, 78px);
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-section,
+  .work-section,
+  .testimonials-section,
+  .faq-section,
+  .contact-page,
+  .site-footer {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .about-section {
+    padding-top: 72px;
+  }
+
+  .testimonials-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    gap: 32px;
+  }
+
+  .team-description {
+    justify-self: start;
+  }
+
+  .staff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-categories {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faq-section {
+    padding-top: 32px;
+    padding-bottom: 72px;
+  }
+
+  .footer-inner,
+  .footer-social {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
